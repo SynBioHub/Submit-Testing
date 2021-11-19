@@ -16,6 +16,7 @@ jobs:
         repo_name_lower=$(echo ${{ github.event.repository.name }}| tr [:upper:] [:lower:])
         tag="synbiohub/${repo_name_lower}:snapshot"
         echo $tag
+        echo hello
         docker build . --tag $tag
     - uses: azure/docker-login@v1
       with:
